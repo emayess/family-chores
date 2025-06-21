@@ -213,7 +213,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/family-chores">
       <div className="min-vh-100 bg-light">
         <Navigation />
         <Routes>
