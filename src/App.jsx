@@ -50,9 +50,9 @@ function Navigation() {
 const defaultChildren = [
   {
     id: 1,
-    name: "Emma",
-    avatar: "👧",
-    color: "primary",
+    name: "Adalee",
+    avatar: "🐱",
+    color: "purple",
     chores: [
       { id: 1, task: "Make your bed", icon: "bi-house-door", difficulty: "easy" },
       { id: 2, task: "Brush your teeth", icon: "bi-droplet", difficulty: "easy" },
@@ -64,9 +64,9 @@ const defaultChildren = [
   },
   {
     id: 2,
-    name: "Alex",
-    avatar: "👦",
-    color: "success",
+    name: "Braelynn",
+    avatar: "🐱",
+    color: "pink",
     chores: [
       { id: 1, task: "Make your bed", icon: "bi-house-door", difficulty: "easy" },
       { id: 2, task: "Brush your teeth", icon: "bi-droplet", difficulty: "easy" },
@@ -78,9 +78,9 @@ const defaultChildren = [
   },
   {
     id: 3,
-    name: "Sophie",
-    avatar: "👶",
-    color: "warning",
+    name: "Calvin",
+    avatar: "🐶",
+    color: "primary",
     chores: [
       { id: 1, task: "Put away toys", icon: "bi-box", difficulty: "easy" },
       { id: 2, task: "Brush your teeth", icon: "bi-droplet", difficulty: "easy" },
