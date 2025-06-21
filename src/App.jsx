@@ -65,7 +65,7 @@ const defaultChildren = [
   {
     id: 2,
     name: "Braelynn",
-    avatar: "🐱",
+    avatar: "🦊",
     color: "pink",
     chores: [
       { id: 1, task: "Make your bed", icon: "bi-house-door", difficulty: "easy" },
@@ -90,11 +90,28 @@ const defaultChildren = [
   }
 ]
 
+// Default color palette
+const defaultColors = [
+  { name: 'primary', label: 'Blue', hex: '#0d6efd' },
+  { name: 'success', label: 'Green', hex: '#198754' },
+  { name: 'warning', label: 'Yellow', hex: '#ffc107' },
+  { name: 'danger', label: 'Red', hex: '#dc3545' },
+  { name: 'info', label: 'Cyan', hex: '#0dcaf0' },
+  { name: 'secondary', label: 'Gray', hex: '#6c757d' },
+  { name: 'purple', label: 'Purple', hex: '#6f42c1' },
+  { name: 'pink', label: 'Pink', hex: '#d63384' },
+  { name: 'teal', label: 'Teal', hex: '#20c997' },
+  { name: 'orange', label: 'Orange', hex: '#fd7e14' },
+  { name: 'indigo', label: 'Indigo', hex: '#6610f2' },
+  { name: 'lime', label: 'Lime', hex: '#32cd32' }
+]
+
 // Local storage keys
 const STORAGE_KEYS = {
   CHILDREN: 'choreChart_children',
   COMPLETED_CHORES: 'choreChart_completedChores',
-  LAST_SAVED: 'choreChart_lastSaved'
+  LAST_SAVED: 'choreChart_lastSaved',
+  AVAILABLE_COLORS: 'choreChart_availableColors'
 }
 
 // Local storage utilities
@@ -164,6 +181,14 @@ const storage = {
 }
 
 function App() {
+  // Initialize color palette if it doesn't exist
+  useEffect(() => {
+    const savedColors = storage.load(STORAGE_KEYS.AVAILABLE_COLORS)
+    if (!savedColors || savedColors.length === 0) {
+      storage.save(STORAGE_KEYS.AVAILABLE_COLORS, defaultColors)
+    }
+  }, [])
+
   // Load initial data from localStorage or use defaults
   const [children, setChildren] = useState(() => {
     const savedChildren = storage.load(STORAGE_KEYS.CHILDREN)

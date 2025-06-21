@@ -4,15 +4,24 @@ function ChoreChart({ children, completedChores, setCompletedChores, storage }) 
   const [activeChild, setActiveChild] = useState(children[0]?.id || 1)
   const [viewMode, setViewMode] = useState('individual') // 'individual' or 'family'
 
-  // Load available colors from storage to get hex values
-  const availableColors = storage?.load('choreChart_availableColors') || [
+  // Default color palette - must match Dashboard component
+  const defaultColors = [
     { name: 'primary', label: 'Blue', hex: '#0d6efd' },
     { name: 'success', label: 'Green', hex: '#198754' },
     { name: 'warning', label: 'Yellow', hex: '#ffc107' },
     { name: 'danger', label: 'Red', hex: '#dc3545' },
     { name: 'info', label: 'Cyan', hex: '#0dcaf0' },
-    { name: 'secondary', label: 'Gray', hex: '#6c757d' }
+    { name: 'secondary', label: 'Gray', hex: '#6c757d' },
+    { name: 'purple', label: 'Purple', hex: '#6f42c1' },
+    { name: 'pink', label: 'Pink', hex: '#d63384' },
+    { name: 'teal', label: 'Teal', hex: '#20c997' },
+    { name: 'orange', label: 'Orange', hex: '#fd7e14' },
+    { name: 'indigo', label: 'Indigo', hex: '#6610f2' },
+    { name: 'lime', label: 'Lime', hex: '#32cd32' }
   ]
+
+  // Load available colors from storage or use defaults
+  const availableColors = storage?.load('choreChart_availableColors') || defaultColors
 
   const getColorHex = (colorName) => {
     const color = availableColors.find(c => c.name === colorName)
