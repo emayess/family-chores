@@ -1,0 +1,173 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom color support for dynamic colors */
+.btn-custom {
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn-custom:hover {
+  filter: brightness(0.9);
+}
+
+.btn-outline-custom {
+  color: currentColor;
+  border: 1px solid currentColor;
+  background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+  color: #fff;
+  background-color: currentColor;
+}
+
+.bg-custom {
+  color: #fff !important;
+}
+
+.text-custom {
+  /* Color will be set inline */
+}
+
+.border-custom {
+  /* Border color will be set inline */
+}
+
+.progress-bar-custom {
+  /* Background color will be set inline */
+}
+
+/* Color management cards */
+.color-card {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.color-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive color grid */
+@media (max-width: 576px) {
+  .color-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .color-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .color-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 993px) {
+  .color-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* Animation for color changes */
+.color-transition {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for color picker */
+.color-picker-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.color-picker-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.color-picker-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.color-picker-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Accessibility improvements */
+.color-button:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.color-button[aria-selected="true"] {
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.5);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .color-button {
+    border: 2px solid #000;
+  }
+  
+  .color-button[aria-selected="true"] {
+    border: 3px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .color-transition,
+  .color-card,
+  .card {
+    transition: none;
+  }
+}
